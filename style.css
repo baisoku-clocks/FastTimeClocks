@@ -1,0 +1,35 @@
+body {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   background-color: black;
+}
+
+.clock {
+   display: flex;
+   justify-content: flex-start;
+   width: 93vw;
+   margin: auto;
+}
+
+.clock div {
+   width: 29%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.watch {
+   width: max-content;
+   color: white;
+   font-size: 22vw;
+
+}
+
+ul {
+   list-style: none;
+   display: flex;
+   width: 100vmin;
+   justify-content: space-around;
+}

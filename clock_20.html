@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   <div class="clock">
+      <div>
+         <h1 id="timehour" class="watch">00</h1>
+      </div>
+      <h1 class="watch">:</h1>
+      <div>
+         <h1 id="timemin" class="watch">00</h1>
+      </div>
+      <h1 class="watch">:</h1>
+      <div>
+         <h1 id="timesec" class="watch">00</h1>
+      </div>
+   </div>
+
+   <ul>
+      <li><a href="clock_5.html" class="btn btn-secondary">5</a></li>
+      <li><a href="clock_10.html" class="btn btn-secondary">10</a></li>
+      <li><a href="clock_15.html" class="btn btn-secondary">15</a></li>
+      <li><a href="clock_20.html" class="btn btn-secondary">20</a></li>
+      <li><a href="clock_30.html" class="btn btn-secondary">30</a></li>
+   </ul>
+
+
+   <script>
+      function set2fig(num) {
+         // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+         var ret;
+         if (num < 10) { ret = "0" + num; }
+         else { ret = num; }
+         return ret;
+      }
+      function showClock2() {
+         var FastParm = 20
+         var nowTime = new Date();
+         var nowSec = (nowTime.getHours() * 3600 + nowTime.getMinutes() * 60 + nowTime.getSeconds()) * FastParm;
+         var FastSec = (nowSec / 1 | 0) % 60;
+         var FastMin = (nowSec / 60 | 0) % 60;
+         var FastHour = (nowSec / 3600 | 0) % 30;
+         var msg = set2fig(FastHour) + ":" + set2fig(FastMin) + ":" + set2fig(FastSec);
+         document.getElementById("timehour").innerHTML = set2fig(FastHour);
+         document.getElementById("timemin").innerHTML = set2fig(FastMin);
+         document.getElementById("timesec").innerHTML = set2fig(FastSec);
+      }
+      setInterval('showClock2()', 1000);
+   </script>
+
+</body>
