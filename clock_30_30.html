@@ -45,7 +45,7 @@
       function showClock2() {
          var FastParm = 30
          var nowTime = new Date();
-         var nowSec = (nowTime.getHours() * 3600 + nowTime.getMinutes() * 60 + nowTime.getSeconds()) * FastParm+1800;
+         var nowSec = (nowTime.getHours() * 3600 + nowTime.getMinutes() * 60 + nowTime.getSeconds()) * FastParm-1800*FastParm;
          var FastSec = (nowSec / 1 | 0) % 60;
          var FastMin = (nowSec / 60 | 0) % 60;
          var FastHour = (nowSec / 3600 | 0) % 30;
